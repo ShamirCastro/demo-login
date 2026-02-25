@@ -5,7 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {FormControl, Validators} from '@angular/forms';
-
+import { trigger, transition, style, animate  } from '@angular/animations';
 @Component({
   selector: 'app-login',
   standalone: true,

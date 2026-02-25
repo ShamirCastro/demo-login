@@ -171,3 +171,117 @@ label {
   color: #3b7dd8;
   text-decoration: underline;
 }
+
+#imagenPortada {
+  animation: imgEnter 650ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+#contendorLogin {
+  animation: panelEnter 700ms cubic-bezier(.2,.8,.2,1) both;
+  animation-delay: 60ms;
+}
+
+#contenedorFormulario {
+  animation: cardEnter 750ms cubic-bezier(.2,.8,.2,1) both;
+  animation-delay: 120ms;
+}
+
+/* 2) Keyframes */
+@keyframes imgEnter {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes panelEnter {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateY(10px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 3) Floating suave en la imagen (opcional pero queda pro) */
+#ImagenInicio {
+  animation: floating 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.input-group {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.input-group input {
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.input-group:focus-within {
+  transform: translateY(-1px);
+}
+
+.input-group:focus-within input {
+  outline: none;
+  transform: scale(1.01);
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+
+.enviar {
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  will-change: transform;
+}
+
+.enviar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.14);
+  filter: brightness(1.02);
+}
+
+.enviar:active {
+  transform: translateY(0) scale(.99);
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+
+#pieFormulario a {
+  position: relative;
+  text-decoration: none;
+}
+
+#pieFormulario a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+  background: currentColor;
+  opacity: .6;
+}
+
+#pieFormulario a:hover::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #imagenPortada,
+  #contendorLogin,
+  #contenedorFormulario,
+  #ImagenInicio {
+    animation: none !important;
+  }
+
+  .input-group,
+  .input-group input,
+  .enviar,
+  #pieFormulario a::after {
+    transition: none !important;
+  }
+}
