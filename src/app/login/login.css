@@ -1,30 +1,21 @@
+@import "tailwindcss";
 html {
   font-size: 18px;
 }
 #contenedorHijo {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f1f7fa;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 85%;
-  height: 70%;
-  padding: 20px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-
   display: flex;
   align-items: center;
-  gap: 20px;                 /* separación entre imagen y login */
-  /* QUITADO: justify-content: flex-end; */
-  /* QUITADO: padding-right: 4%; */
+
 }
 #imagenPortada {
   background-color: #f1f7fa;
 }
 #imagenPortada {
-  flex: 1;                   /* usa TODO el espacio restante */
+  flex: 1;                   
   height: 100%;
   display: flex;
   align-items: center;
@@ -41,17 +32,14 @@ html {
 #ImagenInicio {
   width: 100%;
   height: 100%;
-  object-fit: contain;        /* se ve completa sin deformarse (usa cover si quieres que “llene” recortando) */
+  object-fit: contain;   
   display: block;
 }
 
 #contendorLogin {
-  width: 30%;
-  height: 75%;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,8 +50,6 @@ html {
   max-width: 80%;
   height: 90%;
   box-sizing: border-box;
-
-  /* QUITADO: display:flex + space-between (no sirve para un form en columna) */
 }
 
 #formulario {
@@ -81,7 +67,6 @@ html {
   height: auto;
 }
 
-/* input con estilo */
 input {
   width: 100%;
   padding: 10px 14px;
@@ -126,7 +111,6 @@ label {
   font-size: 1rem;
 }
 
-/* input con ícono */
 .input-group {
   display: flex;
   align-items: center;
@@ -202,7 +186,6 @@ label {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* 3) Floating suave en la imagen (opcional pero queda pro) */
 #ImagenInicio {
   animation: floating 6s ease-in-out infinite;
   will-change: transform;
